@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.152.2/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.152.2/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="js/avatar.js"></script>
+  <title>Portfolio</title>
+</head>
+
+<body>
+  <div class="container__wrapper">
+    <header class="header">
+      <div class="container">
+        <div class="header__wrapper">
+          <a class="header__logo" href="#">
+            <svg class="header__logo-image" width="172" height="70" aria-hidden="true">
+              <use xlink:href="images/sprite.svg#logo-m"></use>
+            </svg>
+          </a>
+          <div class="menu-icon-wrapper">
+            <div class="menu-icon" onclick="toggleCssMenu(this)">
+              <div class="three-line">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+          <div id="cssmenu">
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#works">My works</a></li>
+              <li><a href="#resume">Resume</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <nav class="header__nav" aria-label="Main navigation">
+            <ul class="header__list">
+              <li class="header__list-item"><a class="header__link" href="#about">About</a></li>
+              <li class="header__list-item"><a class="header__link" href="#skills">Skills</a></li>
+              <li class="header__list-item"><a class="header__link" href="#works">My works</a></li>
+              <li class="header__list-item"><a class="header__link" href="#resume">Resume</a></li>
+            </ul>
+          </nav>
+          <button class="btn header__btn" type="button" aria-label="Contact me" data-target="#contact">
+            <svg class="btn__icon" x="0px" y="0px" viewBox="0 0 173.8 48.2">
+              <g>
+                <path class="btn__icon-path" d="M151,45H24C12.7,45,3.5,35.8,3.5,24.5v0C3.5,13.2,12.7,4,24,4h127c11.3,0,20.5,9.2,20.5,20.5v0
+                C171.5,35.8,162.2,45,151,45z" />
+              </g>
+            </svg>
+            Contact me</button>
+        </div>
+      </div>
+    </header>
+    <div class="main">
+      <section class="banner" id="scene">
+        <div class="parallax">
+          <div class="parallax__content" id="text">
+            <h1 class="parallax__title">WEB DESIGN</h1>
+            <p class="parallax__text">UI/UX designer and Frontend developer</p>
+            <span class="parallax__description">A UI/UX designer and creative Frontend developer — I collaborate with
+              brands
+              and agencies globally to design impactful, mission-focused websites that drive results and achieve
+              business
+              goals.</span>
+          </div>
+          <!-- Горы -->
+          <picture class="parallax__picture">
+            <source media="(max-width: 360px)"
+              srcset="images/parallax/parallax-mount-mobile.png 1x, images/parallax/parallax-mount-mobile@2x.png 2x">
+            <source media="(max-width: 768px)"
+              srcset="images/parallax/parallax-mount-tablet-mini.png 1x, images/parallax/parallax-mount-tablet-mini@2x.png 2x">
+            <source media="(max-width: 1024px)"
+              srcset="images/parallax/parallax-mount-tablet.png 1x, images/parallax/parallax-mount-tablet@2x.png 2x">
+            <source media="(min-width: 1304px)"
+              srcset="images/parallax/parallax-mount-desktop.png 1x, images/parallax/parallax-mount-desktop@2x.png 2x">
+            <img class="parallax__image parallax__image--mount" id="mount"
+              src="images/parallax/parallax-mount-desktop-max.png"
+              srcset="images/parallax/parallax-mount-desktop-max.png 1x, images/parallax/parallax-mount-desktop-max@2x.png 2x"
+              alt="mountains" width="1920" height="1080">
+          </picture>
+          <picture class="parallax__picture">
+            <source media="(max-width: 360px)"
+              srcset="images/parallax/parallax-mount1-mobile.png 1x, images/parallax/parallax-mount1-mobile@2x.png 2x">
+            <source media="(max-width: 768px)"
+              srcset="images/parallax/parallax-mount1-tablet-mini.png 1x, images/parallax/parallax-mount1-tablet-mini@2x.png 2x">
+            <source media="(max-width: 1024px)"
+              srcset="images/parallax/parallax-mount1-tablet.png 1x, images/parallax/parallax-mount1-tablet@2x.png 2x">
+            <source media="(min-width: 1304px)"
+              srcset="images/parallax/parallax-mount1-desktop.png 1x, images/parallax/parallax-mount1-desktop@2x.png 2x">
+            <img class="parallax__image parallax__image--mount1" id="mount1"
+              src="images/parallax/parallax-mount1-desktop-max.png"
+              srcset="images/parallax/parallax-mount1-desktop-max.png 1x, images/parallax/parallax-mount1-desktop-max@2x.png 2x"
+              alt="mountains" width="1920" height="1080">
+          </picture>
+          <picture class="parallax__picture">
+            <source media="(max-width: 360px)"
+              srcset="images/parallax/parallax-mount2-mobile.png 1x, images/parallax/parallax-mount2-mobile@2x.png 2x">
+            <source media="(max-width: 768px)"
+              srcset="images/parallax/parallax-mount2-tablet-mini.png 1x, images/parallax/parallax-mount2-tablet-mini@2x.png 2x">
+            <source media="(max-width: 1024px)"
+              srcset="images/parallax/parallax-mount2-tablet.png 1x, images/parallax/parallax-mount2-tablet@2x.png 2x">
+            <source media="(min-width: 1304px)"
+              srcset="images/parallax/parallax-mount2-desktop.png 1x, images/parallax/parallax-mount2-desktop@2x.png 2x">
+            <img class="parallax__image parallax__image--mount2" id="mount2"
+              src="images/parallax/parallax-mount2-desktop-max.png"
+              srcset="images/parallax/parallax-mount2-desktop-max.png 1x, images/parallax/parallax-mount2-desktop-max@2x.png 2x"
+              alt="mountains" width="1920" height="1080">
+          </picture>
+          <!-- Город -->
+          <svg class="parallax__image parallax__image--city" id="city" width="1024" height="517" aria-hidden="true">
+            <use xlink:href="images/sprite.svg#bg"></use>
+          </svg>
+          <!-- clouds -->
+          <picture class="parallax__picture">
+            <img class="parallax__img parallax__img--left cloud1" src="images/parallax/clouds1.png" alt="clouds"
+              width="450" height="240">
+          </picture>
+          <picture class="parallax__picture">
+            <img class="parallax__img parallax__img--center cloud2" src="images/parallax/clouds2.png" alt="clouds"
+              width="450" height="240">
+          </picture>
+          <picture class="parallax__picture">
+            <img class="parallax__img parallax__img--right cloud3" src="images/parallax/clouds3.png" alt="mountains"
+              width="450" height="240">
+          </picture>
+          <picture class="parallax__picture">
+            <img class="parallax__img parallax__img--top" src="images/parallax/clouds3.png" alt="mountains" width="450"
+              height="240">
+          </picture>
+        </div>
+      </section>
+      <section class="about" id="about">
+        <svg class="about__image-shadow" id="shadow" width="1320" height="174" aria-hidden="true">
+          <use xlink:href="images/sprite.svg#schadow"></use>
+        </svg>
+        <div class="container">
+          <div class="about__wrapper">
+            <div id="avaturn-container">
+              <div class="loader" id="avaturn-loading" data-text="Loading...">Loading...</div>
+            </div>
+            <div class="about__content">
+              <h2 class="about__title">About me</h2>
+              <p class="about__text">Hello! My name is Melik, I am a web developer and aspiring 3D designer. I am
+                actively
+                studying frontend development, creating responsive websites and interactive web projects. My goal is
+                to
+                combine web development technologies and 3D graphics to create unique digital solutions.
+                I am a father of two wonderful children and am passionate about working as a freelancer creating
+                modern,
+                creative and effective web solutions for businesses.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="skills" id="skills">
+        <div class="container">
+          <div class="skills__wrapper">
+            <div class="skills__content">
+              <h2 class="skills__title">Skills</h2>
+              <p class="skills__text">I am a web developer and aspiring 3D designer. I am actively studying frontend
+                development, creating responsive websites and interactive web projects. My goal is to combine web
+                development technologies and 3D graphics to create unique digital solutions. I am a father of two
+                wonderful children and am passionate about working as a freelancer creating modern, creative and
+                effective
+                web solutions for businesses.</p>
+            </div>
+            <div class="skills__animation">
+              <div id="spiral1" class="spiral"></div>
+              <div id="spiral2" class="spiral"></div>
+            </div>
+            <div class="skills__cards">
+              <div class="main-box box3">
+                <div class="card3 card3--left">
+                  <div class="card-main">
+                    <div class="logo">
+                      <span class="circle circle1"></span>
+                      <span class="circle circle2"></span>
+                      <span class="circle circle3"></span>
+                      <span class="circle circle4"></span>
+                      <span class="circle circle5">
+                        <svg class="svg" viewBox="0 0 100 100" fill="white">
+                          <path
+                            d="M100 34.2c-.4-2.6-3.3-4-5.3-5.3-3.6-2.4-7.1-4.7-10.7-7.1-8.5-5.7-17.1-11.4-25.6-17.1-2-1.3-4-2.7-6-4-1.4-1-3.3-1-4.8 0-5.7 3.8-11.5 7.7-17.2 11.5L5.2 29C3 30.4.1 31.8 0 34.8c-.1 3.3 0 6.7 0 10v16c0 2.9-.6 6.3 2.1 8.1 6.4 4.4 12.9 8.6 19.4 12.9 8 5.3 16 10.7 24 16 2.2 1.5 4.4 3.1 7.1 1.3 2.3-1.5 4.5-3 6.8-4.5 8.9-5.9 17.8-11.9 26.7-17.8l9.9-6.6c.6-.4 1.3-.8 1.9-1.3 1.4-1 2-2.4 2-4.1V37.3c.1-1.1.2-2.1.1-3.1 0-.1 0 .2 0 0zM54.3 12.3 88 34.8 73 44.9 54.3 32.4V12.3zm-8.6 0v20L27.1 44.8 12 34.8l33.7-22.5zM8.6 42.8 19.3 50 8.6 57.2V42.8zm37.1 44.9L12 65.2l15-10.1 18.6 12.5v20.1zM50 60.2 34.8 50 50 39.8 65.2 50 50 60.2zm4.3 27.5v-20l18.6-12.5 15 10.1-33.6 22.4zm37.1-30.5L80.7 50l10.8-7.2-.1 14.4z">
+                          </path>
+                        </svg>
+                      </span>
+                    </div>
+                    <div class="glass"></div>
+                    <div class="content">
+                      <span class="title">CODING</span>
+                      <span class="text">I am still learning and have a lot to learn, but I already know the basics
+                        HTML,CSS,SCSS,JS.</span>
+                    </div>
+                    <div class="bottom">
+                      <div class="social-buttons-container">
+                        <button class="social-button .social-button1">
+                          <svg class="svg" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M0 0L0.807169 8.0099H11.1863L10.838 11.4454L7.49616 12.2447L4.16062 11.4466L3.93761 9.24066H0.931772L1.36159 13.4931L7.49541 15L13.637 13.4931L14.4604 5.36147H3.54601L3.27197 2.649H14.7226H14.7318L15 0H0Z" />
+                            <path d="M7.5 0H0L0.807169 8.0099H7.5V5.36146H3.54601L3.27197 2.649H7.5V0Z" />
+                            <path
+                              d="M7.49988 12.2436L7.49603 12.2447L4.1605 11.4467L3.93749 9.24072H0.931641L1.36147 13.4932L7.49528 15.0001L7.49988 14.9989V12.2436Z" />
+                          </svg></button>
+                        <button class="social-button .social-button2">
+                          <svg class="svg" width="15" height="15" viewBox="0 0 15 15"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.539062 5.36133L0.807451 8.01018H7.50877V5.36133H0.539062Z" />
+                            <path d="M7.50894 0H7.49862H0L0.272213 2.64888H7.50894V0Z" />
+                            <path
+                              d="M7.50885 14.9965V12.2406L7.49573 12.2436L4.16068 11.4471L3.94748 9.33447H2.3269H0.941406L1.36094 13.4936L7.49507 14.9999L7.50885 14.9965Z" />
+                            <path
+                              d="M11.1855 8.01017L10.8379 11.4455L7.49805 12.2429V14.9987L13.6371 13.4937L13.6821 13.0462L14.3858 6.07266L14.4588 5.36131L14.9995 0H7.49805V2.64888H11.7177L11.4452 5.36131H7.49805V8.01017H11.1855Z" />
+                          </svg>
+                        </button>
+                        <button class="social-button .social-button3">
+                          <svg class="svg" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M3.52638e-05 12.2454L1.74141 10.7606C2.07735 11.5998 2.38295 12.3099 3.11598 12.3099C3.81863 12.3099 4.26164 11.9226 4.26164 10.4163V0.172363H6.40007V10.4589C6.40007 13.5794 5.1018 14.9998 3.20762 14.9998C1.49703 14.9998 0.50404 13.7516 0 12.2451" />
+                            <path
+                              d="M7.56055 11.9225L9.30166 10.5022C9.76005 11.5568 10.3558 12.3315 11.4096 12.3315C12.2957 12.3315 12.8607 11.7073 12.8607 10.8465C12.8607 9.81353 12.2802 9.44759 11.3027 8.84521L10.7682 8.52223C9.22539 7.597 8.20195 6.43482 8.20195 3.98147C8.20195 1.72173 9.42397 0 11.3333 0C12.6928 0 13.6703 0.66725 14.3729 2.41039L12.708 3.91684C12.3413 2.99148 11.9443 2.62567 11.3333 2.62567C10.707 2.62567 10.3099 3.18522 10.3099 3.91684C10.3099 4.82066 10.707 5.1866 11.6235 5.74628L12.158 6.069C13.9757 7.16669 14.9991 8.28554 14.9991 10.8034C14.9991 13.5152 13.487 15 11.4555 15C9.46983 15 8.18675 13.6658 7.56055 11.9225Z" />
+                          </svg>
+                        </button>
+                        <button class="social-button .social-button3">
+                          <svg class="svg" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M-0.853567 5.32462C-0.853567 5.32462 -1.22844 5.05361 -0.778592 4.69176L0.269488 3.75191C0.269488 3.75191 0.569382 3.43549 0.886466 3.71118L10.5582 11.0545V14.5759C10.5582 14.5759 10.5535 15.1289 9.84587 15.0677L-0.853567 5.32462Z" />
+                            <path
+                              d="M1.638 7.59448L-0.8549 9.86731C-0.8549 9.86731 -1.11106 10.0584 -0.8549 10.4L0.30252 11.4557C0.30252 11.4557 0.577425 11.7518 0.98353 11.4149L3.62638 9.40525L1.638 7.59448Z" />
+                            <path
+                              d="M6.01518 7.61323L10.5871 4.11224L10.5574 0.609722C10.5574 0.609722 10.3622 -0.154693 9.71082 0.243177L3.62695 5.79611L6.01518 7.61323Z" />
+                            <path
+                              d="M9.84523 15.0728C10.1108 15.3453 10.4326 15.256 10.4326 15.256L13.9954 13.4954C14.4515 13.1836 14.3875 12.7967 14.3875 12.7967V2.28288C14.3875 1.82078 13.9157 1.66101 13.9157 1.66101L10.8278 0.168207C10.153 -0.250024 9.71094 0.243396 9.71094 0.243396C9.71094 0.243396 10.2794 -0.167005 10.5575 0.609941V14.5119C10.5575 14.6075 10.5372 14.7015 10.4966 14.7861C10.4154 14.9505 10.2389 15.104 9.81561 15.0398L9.84523 15.0728Z" />
+                          </svg>
+                        </button>
+                        <button class="social-button .social-button3">
+                          <svg class="svg" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M1.20405 9.49356C1.18 9.54017 1.09465 9.55415 1.01689 9.52216C0.937695 9.49158 0.893209 9.42799 0.918891 9.38128C0.942401 9.33325 1.02792 9.31993 1.10695 9.35211C1.18633 9.38269 1.23154 9.44684 1.20405 9.49356ZM1.74117 9.90524C1.68909 9.94679 1.58729 9.92747 1.51821 9.8619C1.44679 9.79652 1.4334 9.7091 1.48621 9.66699C1.53991 9.62553 1.63864 9.64495 1.71024 9.71032C1.78167 9.77655 1.79559 9.86331 1.74117 9.90524ZM2.10965 10.432C2.04275 10.472 1.93335 10.4345 1.86572 10.3511C1.79881 10.2677 1.79881 10.1677 1.86716 10.1275C1.93497 10.0875 2.04275 10.1235 2.11128 10.2063C2.178 10.2911 2.178 10.3912 2.10965 10.432ZM2.73283 11.0421C2.67298 11.0987 2.5455 11.0835 2.45219 11.0061C2.35673 10.9305 2.33014 10.8232 2.39017 10.7665C2.45075 10.7097 2.57896 10.7257 2.67298 10.8024C2.76773 10.8778 2.79666 10.986 2.73283 11.0421ZM3.53824 11.248C3.51184 11.3215 3.38906 11.3549 3.26537 11.3237C3.14187 11.2915 3.06105 11.2055 3.086 11.1312C3.11168 11.0573 3.235 11.0225 3.35959 11.0559C3.48291 11.0878 3.56391 11.1733 3.53824 11.248ZM4.45482 11.3354C4.45789 11.4127 4.35302 11.4768 4.22319 11.4782C4.09264 11.4808 3.98704 11.4181 3.98558 11.342C3.98558 11.2639 4.08812 11.2004 4.21867 11.1985C4.3485 11.1964 4.45482 11.2585 4.45482 11.3354ZM5.35522 11.3057C5.37083 11.3812 5.28064 11.4587 5.15168 11.4794C5.0249 11.4992 4.90754 11.4526 4.89146 11.3778C4.87572 11.3004 4.96758 11.2229 5.09413 11.2028C5.22331 11.1836 5.33884 11.229 5.35522 11.3057Z"
+                              fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M5.30508 15C5.30508 15 5.32781 14.2087 5.32781 13.961C5.32781 13.7373 5.31765 12.9984 5.31296 12.2146C2.27519 12.782 1.63418 11.1079 1.63418 11.1079C1.13745 10.0237 0.421763 9.73546 0.421763 9.73546C-0.568965 9.15325 0.496441 9.16526 0.496441 9.16526C1.59295 9.23139 2.17031 10.1319 2.17031 10.1319C3.14422 11.5658 4.72478 11.1513 5.3479 10.9116C5.44596 10.3053 5.72888 9.89154 6.04117 9.65733C3.61581 9.42011 1.06622 8.61579 1.06622 5.02172C1.06622 3.99763 1.49277 3.16085 2.19129 2.504C2.07791 2.26775 1.70415 1.31373 2.29707 0.0217196C2.29707 0.0217196 3.21402 -0.230382 5.30073 0.983191C6.17177 0.775362 7.10582 0.671142 8.03386 0.667568C8.96179 0.671142 9.89671 0.775362 10.7693 0.983191C12.8535 -0.230382 13.7692 0.0217196 13.7692 0.0217196C14.3635 1.31373 13.9896 2.26775 13.8762 2.504C14.5763 3.16085 15 3.99763 15 5.02172C15 8.62442 12.4455 9.41767 10.014 9.64982C10.4057 9.94097 10.7546 10.5117 10.7546 11.3869C10.7546 12.6419 10.742 13.652 10.742 13.961C10.742 14.2106 10.7648 15 10.7648 15H5.30508ZM1.01689 9.52216C1.09465 9.55415 1.18 9.54017 1.20405 9.49356C1.23154 9.44684 1.18633 9.38269 1.10695 9.35211C1.02792 9.31993 0.942401 9.33325 0.918891 9.38128C0.893209 9.42799 0.937695 9.49158 1.01689 9.52216ZM1.51821 9.8619C1.58729 9.92747 1.68909 9.94679 1.74117 9.90524C1.79559 9.86331 1.78167 9.77655 1.71024 9.71032C1.63864 9.64495 1.53991 9.62553 1.48621 9.66699C1.4334 9.7091 1.44679 9.79652 1.51821 9.8619ZM1.86572 10.3511C1.93335 10.4345 2.04275 10.472 2.10965 10.432C2.178 10.3912 2.178 10.2911 2.11128 10.2063C2.04275 10.1235 1.93497 10.0875 1.86716 10.1275C1.79881 10.1677 1.79881 10.2677 1.86572 10.3511ZM2.45219 11.0061C2.5455 11.0835 2.67298 11.0987 2.73283 11.0421C2.79666 10.986 2.76773 10.8778 2.67298 10.8024C2.57896 10.7257 2.45075 10.7097 2.39017 10.7665C2.33014 10.8232 2.35673 10.9305 2.45219 11.0061ZM3.26537 11.3237C3.38906 11.3549 3.51184 11.3215 3.53824 11.248C3.56391 11.1733 3.48291 11.0878 3.35959 11.0559C3.235 11.0225 3.11168 11.0573 3.086 11.1312C3.06105 11.2055 3.14187 11.2915 3.26537 11.3237ZM4.22319 11.4782C4.35302 11.4768 4.45789 11.4127 4.45482 11.3354C4.45482 11.2585 4.3485 11.1964 4.21867 11.1985C4.08812 11.2004 3.98558 11.2639 3.98558 11.342C3.98704 11.4181 4.09264 11.4808 4.22319 11.4782ZM5.15168 11.4794C5.28064 11.4587 5.37083 11.3812 5.35522 11.3057C5.33884 11.229 5.22331 11.1836 5.09413 11.2028C4.96758 11.2229 4.87572 11.3004 4.89146 11.3778C4.90754 11.4526 5.0249 11.4992 5.15168 11.4794Z" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card3 card3--center">
+                  <div class="card-main">
+                    <div class="logo">
+                      <span class="circle circle1"></span>
+                      <span class="circle circle2"></span>
+                      <span class="circle circle3"></span>
+                      <span class="circle circle4"></span>
+                      <span class="circle circle5">
+                        <svg class="svg" viewBox="0 0 100 100" fill="white">
+                          <path
+                            d="M100 34.2c-.4-2.6-3.3-4-5.3-5.3-3.6-2.4-7.1-4.7-10.7-7.1-8.5-5.7-17.1-11.4-25.6-17.1-2-1.3-4-2.7-6-4-1.4-1-3.3-1-4.8 0-5.7 3.8-11.5 7.7-17.2 11.5L5.2 29C3 30.4.1 31.8 0 34.8c-.1 3.3 0 6.7 0 10v16c0 2.9-.6 6.3 2.1 8.1 6.4 4.4 12.9 8.6 19.4 12.9 8 5.3 16 10.7 24 16 2.2 1.5 4.4 3.1 7.1 1.3 2.3-1.5 4.5-3 6.8-4.5 8.9-5.9 17.8-11.9 26.7-17.8l9.9-6.6c.6-.4 1.3-.8 1.9-1.3 1.4-1 2-2.4 2-4.1V37.3c.1-1.1.2-2.1.1-3.1 0-.1 0 .2 0 0zM54.3 12.3 88 34.8 73 44.9 54.3 32.4V12.3zm-8.6 0v20L27.1 44.8 12 34.8l33.7-22.5zM8.6 42.8 19.3 50 8.6 57.2V42.8zm37.1 44.9L12 65.2l15-10.1 18.6 12.5v20.1zM50 60.2 34.8 50 50 39.8 65.2 50 50 60.2zm4.3 27.5v-20l18.6-12.5 15 10.1-33.6 22.4zm37.1-30.5L80.7 50l10.8-7.2-.1 14.4z">
+                          </path>
+                        </svg>
+                      </span>
+                    </div>
+                    <div class="glass"></div>
+                    <div class="content">
+                      <span class="title">DESING</span>
+                      <span class="text">I am trying to study UX/UI directions in design and have mastered tools such as
+                        Figma, Adobe Illustrator, Adobe Photoshop and the capabilities of artificial intelligence to a
+                        sufficient level.</span>
+                    </div>
+                    <div class="bottom">
+                      <div class="social-buttons-container">
+                        <button class="social-button .social-button1">
+                          <svg class="svg" viewBox="0 0 13 17" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_138_3750" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0"
+                              width="13" height="17">
+                              <path d="M13 0H0V17H13V0Z" fill="white" />
+                            </mask>
+                            <g mask="url(#mask0_138_3750)">
+                              <path
+                                d="M3.25131 17.0002C5.04498 17.0002 6.50066 15.7309 6.50066 14.1669V11.3335H3.25131C1.45767 11.3335 0.00195312 12.6029 0.00195312 14.1669C0.00195312 15.7309 1.45767 17.0002 3.25131 17.0002Z" />
+                              <path
+                                d="M0.00195312 8.49983C0.00195312 6.93583 1.45767 5.6665 3.25131 5.6665H6.50066V11.3331H3.25131C1.45767 11.3331 0.00195312 10.0638 0.00195312 8.49983Z" />
+                              <path
+                                d="M0.00195312 2.83333C0.00195312 1.26933 1.45767 0 3.25131 0H6.50066V5.66667H3.25131C1.45767 5.66667 0.00195312 4.39733 0.00195312 2.83333Z" />
+                              <path
+                                d="M6.5 0H9.74932C11.543 0 12.9987 1.26933 12.9987 2.83333C12.9987 4.39733 11.543 5.66667 9.74932 5.66667H6.5V0Z" />
+                              <path
+                                d="M12.9987 8.49983C12.9987 10.0638 11.543 11.3331 9.74932 11.3331C7.95568 11.3331 6.5 10.0638 6.5 8.49983C6.5 6.93583 7.95568 5.6665 9.74932 5.6665C11.543 5.6665 12.9987 6.93583 12.9987 8.49983Z" />
+                            </g>
+                          </svg>
+                        </button>
+                        <button class="social-button .social-button2">
+                          <svg class="svg" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M0.601562 14.9943V0.702659C0.601562 0.605433 0.632724 0.549886 0.705438 0.549886C0.882018 0.549886 1.04822 0.549886 1.28712 0.535993C1.53641 0.5221 1.7961 0.522099 2.07655 0.508219C2.35701 0.494326 2.65823 0.494326 2.98024 0.480433C3.30224 0.466552 3.61386 0.466553 3.92547 0.466553C4.77722 0.466553 5.48352 0.605433 6.06527 0.897098C6.5846 1.13322 7.06244 1.5221 7.45712 2.03599C7.78948 2.48042 8.0492 3.02209 8.21542 3.61931C8.37123 4.20264 8.4543 4.79987 8.4543 5.42492C8.4543 6.61931 8.24659 7.60538 7.83106 8.38324C7.41554 9.16097 6.83389 9.7443 6.15875 10.0776C5.45236 10.4249 4.67335 10.5499 3.82161 10.5499C3.57231 10.5499 3.40611 10.5499 3.30224 10.536C3.19837 10.522 3.05295 10.522 2.85559 10.522V14.9803C2.86598 15.0776 2.81404 15.1609 2.74133 15.1749C2.73095 15.1749 2.72056 15.1749 2.69979 15.1749H0.726209C0.643115 15.1749 0.601562 15.1193 0.601562 14.9943ZM2.86598 3.23042V7.89704C3.0114 7.91097 3.14643 7.92491 3.27108 7.92491H3.82161C4.22671 7.92491 4.63181 7.84157 5.01609 7.67491C5.34855 7.54991 5.63933 7.28598 5.86788 6.93871C6.08601 6.59158 6.18991 6.11932 6.18991 5.50825C6.20024 5.07765 6.11717 4.64708 5.95094 4.27208C5.77439 3.91098 5.5251 3.63321 5.2239 3.48042C4.83954 3.27209 4.42406 3.18875 3.99819 3.20265C3.72812 3.20265 3.48921 3.20265 3.29186 3.21654C3.08411 3.20265 2.93869 3.21654 2.86598 3.23042Z" />
+                            <path
+                              d="M14.936 7.04982C14.6244 6.82756 14.292 6.67482 13.9388 6.57756C13.5545 6.46649 13.1702 6.39696 12.7754 6.39696C12.5677 6.38316 12.3496 6.42482 12.1522 6.49422C12.0172 6.53589 11.9029 6.63316 11.8302 6.77196C11.7782 6.88315 11.7471 7.02196 11.7471 7.14696C11.7471 7.27196 11.7887 7.39695 11.851 7.50815C11.9445 7.66089 12.0691 7.78589 12.2042 7.88315C12.4431 8.04982 12.6924 8.20255 12.9416 8.34148C13.5026 8.59148 14.0427 8.93862 14.5413 9.35528C14.8841 9.64695 15.1645 10.0359 15.3618 10.5081C15.5281 10.9525 15.6111 11.4386 15.6008 11.9386C15.6111 12.5915 15.4657 13.2442 15.1957 13.7859C14.9048 14.3415 14.4997 14.7719 14.0323 15.0219C13.5233 15.3136 12.9001 15.4665 12.1522 15.4665C11.6744 15.4665 11.207 15.4109 10.7396 15.2859C10.376 15.2025 10.0124 15.0498 9.68009 14.8415C9.60734 14.7859 9.55544 14.6886 9.56576 14.5775V12.1609C9.56576 12.1192 9.57618 12.0636 9.60734 12.0359C9.63851 12.0081 9.66967 12.0219 9.70083 12.0498C10.1059 12.3692 10.5318 12.5915 10.9889 12.7303C11.3836 12.8692 11.7991 12.9386 12.2145 12.9386C12.6093 12.9386 12.8897 12.8692 13.0767 12.7442C13.2428 12.6469 13.3572 12.4109 13.3572 12.1609C13.3572 11.9665 13.274 11.7859 13.1079 11.6053C12.9416 11.4248 12.5989 11.2165 12.0899 10.9525C11.5601 10.7025 11.0719 10.3692 10.6149 9.95254C10.2929 9.64695 10.0229 9.24421 9.82548 8.77195C9.65925 8.32755 9.57618 7.84148 9.5866 7.35529C9.5866 6.75816 9.71125 6.18863 9.9397 5.67483C10.1994 5.11923 10.5838 4.67478 11.0304 4.39699C11.5186 4.06366 12.1314 3.91089 12.8689 3.91089C13.2948 3.91089 13.7311 3.95256 14.1569 4.03589C14.4686 4.09145 14.7698 4.20255 15.0502 4.35533C15.0918 4.36922 15.1334 4.42478 15.1541 4.48033C15.1645 4.53589 15.1749 4.59145 15.1749 4.64699V6.91089C15.1749 6.96649 15.1541 7.02196 15.123 7.04982C15.0295 7.07756 14.9776 7.07756 14.936 7.04982Z" />
+                          </svg>
+                        </button>
+                        <button class="social-button .social-button3">
+                          <svg class="svg" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M6.85732 0.964286C6.62966 0.342852 6.13928 0 5.63152 0C5.14117 0 4.65086 0.342852 4.44073 0.964286L0.115475 12.75C-0.182219 13.5429 0.115474 14.5071 0.780897 14.85C0.956011 14.9571 1.13112 15 1.30623 15C1.81406 15 2.28686 14.6571 2.5145 14.0571L3.10988 12.4285H8.1881L8.78347 14.0571C8.99365 14.6571 9.48392 15 9.9742 15C10.1493 15 10.342 14.9571 10.5171 14.85C11.165 14.5071 11.4627 13.5429 11.165 12.75L6.85732 0.964286ZM7.155 9.59998H4.14304L5.63152 5.46427L7.155 9.59998Z" />
+                            <path
+                              d="M14.8942 2.10004C14.8942 2.95718 14.3339 3.6429 13.6334 3.6429C12.933 3.6429 12.3551 2.95718 12.3551 2.10004C12.3551 1.26433 12.933 0.578613 13.6334 0.578613C14.3339 0.578613 14.8942 1.26433 14.8942 2.10004ZM13.6334 15C12.8629 15 12.25 14.2286 12.25 13.3072V5.9786C12.25 5.05718 12.8629 4.28575 13.6334 4.28575C14.3863 4.28575 14.9993 5.05718 14.9993 5.9786V13.3072C14.9993 14.2286 14.3863 15 13.6334 15Z" />
+                            <defs>
+                              <linearGradient id="paint0_linear_138_3763" x1="-1.36701e-06" y1="9.19196" x2="57.6221"
+                                y2="9.19196" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#82E97A" />
+                                <stop offset="1" stop-color="#21DEBB" />
+                              </linearGradient>
+                              <linearGradient id="paint1_linear_138_3763" x1="-0.000670783" y1="9.19202" x2="57.6214"
+                                y2="9.19202" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#82E97A" />
+                                <stop offset="1" stop-color="#21DEBB" />
+                              </linearGradient>
+                            </defs>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card3 card3--right">
+                  <div class="card-main">
+                    <div class="logo">
+                      <span class="circle circle1"></span>
+                      <span class="circle circle2"></span>
+                      <span class="circle circle3"></span>
+                      <span class="circle circle4"></span>
+                      <span class="circle circle5">
+                        <svg class="svg" viewBox="0 0 100 100" fill="white">
+                          <path
+                            d="M100 34.2c-.4-2.6-3.3-4-5.3-5.3-3.6-2.4-7.1-4.7-10.7-7.1-8.5-5.7-17.1-11.4-25.6-17.1-2-1.3-4-2.7-6-4-1.4-1-3.3-1-4.8 0-5.7 3.8-11.5 7.7-17.2 11.5L5.2 29C3 30.4.1 31.8 0 34.8c-.1 3.3 0 6.7 0 10v16c0 2.9-.6 6.3 2.1 8.1 6.4 4.4 12.9 8.6 19.4 12.9 8 5.3 16 10.7 24 16 2.2 1.5 4.4 3.1 7.1 1.3 2.3-1.5 4.5-3 6.8-4.5 8.9-5.9 17.8-11.9 26.7-17.8l9.9-6.6c.6-.4 1.3-.8 1.9-1.3 1.4-1 2-2.4 2-4.1V37.3c.1-1.1.2-2.1.1-3.1 0-.1 0 .2 0 0zM54.3 12.3 88 34.8 73 44.9 54.3 32.4V12.3zm-8.6 0v20L27.1 44.8 12 34.8l33.7-22.5zM8.6 42.8 19.3 50 8.6 57.2V42.8zm37.1 44.9L12 65.2l15-10.1 18.6 12.5v20.1zM50 60.2 34.8 50 50 39.8 65.2 50 50 60.2zm4.3 27.5v-20l18.6-12.5 15 10.1-33.6 22.4zm37.1-30.5L80.7 50l10.8-7.2-.1 14.4z">
+                          </path>
+                        </svg>
+                      </span>
+                    </div>
+                    <div class="glass"></div>
+                    <div class="content">
+                      <span class="title">3D-MODELING</span>
+                      <span class="text">I am passionate about 3D modeling and want to further delve into this area and
+                        expand my knowledge in graphics and working with 3D software.</span>
+                    </div>
+                    <div class="bottom">
+                      <div class="social-buttons-container">
+                        <button class="social-button .social-button1">
+                          <svg class="svg" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M5.8976 8.32613C5.95231 7.12584 6.42974 6.06831 7.15006 5.31865C7.85647 4.58236 8.80732 4.13232 9.84477 4.13232C10.8812 4.13232 11.832 4.58236 12.5389 5.31865C13.2587 6.06831 13.7362 7.12584 13.7914 8.32484C13.846 9.55817 13.4433 10.7039 12.7369 11.5532C12.0166 12.4171 10.9921 12.9592 9.84477 12.9592C8.69749 12.9592 7.6709 12.4171 6.95108 11.5532C6.2441 10.7039 5.84248 9.55817 5.8976 8.32613Z" />
+                            <path
+                              d="M7.81899 8.43387C7.84701 7.81798 8.09201 7.27534 8.46159 6.89069C8.82404 6.51288 9.31193 6.28198 9.84428 6.28198C10.3761 6.28198 10.8639 6.51288 11.2266 6.89069C11.596 7.27534 11.841 7.81798 11.8693 8.43318C11.8973 9.06601 11.6907 9.65388 11.3282 10.0897C10.9586 10.533 10.433 10.8111 9.84428 10.8111C9.2556 10.8111 8.72882 10.533 8.35945 10.0897C7.99679 9.65388 7.79068 9.06601 7.81899 8.43387Z" />
+                            <path
+                              d="M4.59437 9.67847C4.59782 9.91948 4.66025 10.3878 4.75391 10.7536C4.95076 11.5278 5.28464 12.244 5.7492 12.8752C6.226 13.524 6.81305 14.0451 7.49116 14.4151C8.20392 14.8036 8.97619 15.0016 9.77838 15C10.5792 14.9987 11.3515 14.7968 12.0643 14.4053C12.7424 14.0317 13.3289 13.5084 13.8049 12.8593C14.2692 12.2254 14.6026 11.5079 14.7999 10.7337C14.8992 10.3425 14.9618 9.94551 14.987 9.5472C15.0116 9.15477 15.0013 8.76165 14.9561 8.36887C14.8677 7.60347 14.6525 6.88528 14.3213 6.23065C14.0184 5.62912 13.6279 5.10247 13.1636 4.65917L13.1646 4.65818L8.47878 0.229045C8.47454 0.225136 8.47116 0.220907 8.46664 0.217327C8.15917 -0.0732003 7.64221 -0.0722232 7.30411 0.218952C6.96227 0.51338 6.92316 1.0003 7.22738 1.30743L7.22604 1.30905L9.18046 3.26551L3.22363 3.27333H3.2157C2.72334 3.27398 2.25002 3.67166 2.15636 4.17421C2.06005 4.6862 2.39447 5.11086 2.90641 5.1132L2.90562 5.11544L5.92488 5.10827L0.537179 10.1992C0.530304 10.2055 0.522893 10.2119 0.516547 10.2182C0.00830211 10.6973 -0.155991 11.4939 0.164139 11.998C0.489033 12.5108 1.17982 12.5117 1.69336 12.001L4.6338 9.03846C4.6338 9.03846 4.59094 9.43841 4.59437 9.67847ZM12.1502 11.0177C11.5444 11.7776 10.6962 12.2085 9.77838 12.2108C8.85923 12.2128 8.01101 11.7857 7.40519 11.0272C7.10915 10.6575 6.89161 10.2322 6.7575 9.77913C6.626 9.33386 6.57497 8.86127 6.60885 8.38444C6.64082 7.91841 6.75355 7.47384 6.93347 7.07163C7.11021 6.67618 7.35359 6.31894 7.65414 6.0167C8.2431 5.4259 8.99285 5.10602 9.77704 5.10472C10.562 5.10342 11.3113 5.42027 11.9008 6.00918C12.2008 6.31012 12.4439 6.66614 12.6207 7.06082C12.8014 7.46277 12.9133 7.9057 12.9466 8.37311C12.98 8.84925 12.9289 9.32115 12.7974 9.76677C12.663 10.2211 12.4463 10.6464 12.1502 11.0177Z" />
+                          </svg>
+                        </button>
+                        <button class="social-button .social-button2">
+                          <svg class="svg" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M5.6237 0.00175248L9.24048 0C10.0599 1.25667 10.7508 2.58109 11.3399 3.93993C11.5756 4.44478 11.8137 4.94962 12.0048 5.47035C12.291 6.23306 12.6517 6.97067 12.9253 7.73777C13.4628 9.3523 13.9377 10.9838 14.415 12.6137C14.5931 13.2628 14.8395 13.8938 15 14.5468C14.747 14.6216 14.4926 14.6937 14.2401 14.7707C13.9563 14.8527 13.6551 14.8445 13.3611 14.8674C12.9403 14.9046 12.5177 14.9286 12.0962 14.9614L11.0814 14.3255C11.0351 14.032 11.0424 13.7321 10.9816 13.4398C10.8091 12.5027 10.5385 11.5827 10.2307 10.6751L4.58779 11.3871C4.5457 11.5931 4.50182 11.7996 4.45913 12.0061C4.27035 12.7382 4.31784 13.4966 4.26734 14.2424L2.97836 14.9653C2.8954 15.0231 2.78718 14.9914 2.69279 14.9904C2.37415 14.9614 2.05371 14.9626 1.73628 14.9276C1.41283 14.891 1.06653 14.9434 0.764127 14.8101C0.511027 14.703 0.250099 14.6112 0 14.4981C0.28798 13.254 0.670948 12.0296 1.04429 10.8047C1.50541 9.27641 2.05732 7.77222 2.62546 6.27465C3.42145 4.10986 4.43268 2.01069 5.6237 0.00165602V0.00175248ZM7.19102 4.41256C6.7215 5.65065 6.17797 6.86359 5.67537 8.09079L8.67658 6.58824C8.38439 5.84788 8.08982 5.10865 7.78076 4.37431C7.72193 4.25028 7.66293 4.0902 7.5006 4.05523C7.30765 4.07599 7.25113 4.27324 7.19102 4.41256Z" />
+                          </svg>
+                        </button>
+                        <button class="social-button .social-button3">
+                          <svg class="svg" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.74182 16L1 1L16 5.27638L4.74182 16Z"
+                              stroke="black" stroke-miterlimit="10" stroke-linejoin="round" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M8.49736 3.13867L10.3669 10.6409L2.87109 8.50203L8.49736 3.13867Z" stroke="black"
+                              stroke-miterlimit="10" stroke-linejoin="round" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M6.63758 9.51957L5.70898 5.79272L9.43305 6.85132L6.63758 9.51957Z" stroke="black"
+                              stroke-miterlimit="10" stroke-linejoin="round" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M4.77985 2.07031L5.70845 5.79717L1.98438 4.73857L4.77985 2.07031Z" stroke="black"
+                              stroke-miterlimit="10" stroke-linejoin="round" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M12.2271 4.19482L13.1557 7.92169L9.43164 6.8631L12.2271 4.19482Z" stroke="black"
+                              stroke-miterlimit="10" stroke-linejoin="round" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M6.63727 9.52197L7.56586 13.2488L3.8418 12.1902L6.63727 9.52197Z" stroke="black"
+                              stroke-miterlimit="10" stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Placeholder for Works section -->
+      <section id="works" class="works">
+        <div class="container">
+          <!-- Portfolio works here -->
+          <div class="works__wrapper">
+            <!-- carousel -->
+            <div id="ninja-slider">
+              <div class="slider-inner">
+                <ul>
+                  <li>
+                    <a class="ns-img" href="images/works/work1-desktop.png"></a>
+                    <div class="caption">Interior design concept</div>
+                  </li>
+                  <li>
+                    <a class="ns-img" href="images/works/work2-desktop.png"></a>
+                    <div class="caption">Travel Destinations</div>
+                  </li>
+                  <li>
+                    <a class="ns-img" href="images/works/work3-desktop.png"></a>
+                    <div class="caption">Real Estate Development</div>
+                  </li>
+                  <li>
+                    <a class="ns-img" href="images/works/work4-desktop.png"></a>
+                    <div class="caption">Corporate news article design </div>
+                  </li>
+                  <li>
+                    <a class="ns-img" href="images/works/work5-desktop.png"></a>
+                    <div class="caption">Fitness landing page promoting</div>
+                  </li>
+                  <li>
+                    <a class="ns-img" href="images/works/work6-desktop.png"></a>
+                    <div class="caption">E-commerce product page</div>
+                  </li>
+                </ul>
+                <div class="navsWrapper">
+                  <div id="ninja-slider-prev"></div>
+                  <div id="ninja-slider-next"></div>
+                </div>
+              </div>
+            </div>
+            <div class="cards-works" id="root">
+              <ul class="cards-main">
+                <!-- Генерация 6 карточек -->
+                <li class="card-wrapper" style="--index: 0;">
+                  <div class="card-shadow"></div>
+                  <div class="card card--1">
+                    <div class="heading">Website</div>
+                    <div class="subheading">Parallax Effect</div>
+                    <a class="number" href="https://melik1986.github.io/potential-telegram/">github.io</a>
+                  </div>
+                </li>
+
+                <li class="card-wrapper" style="--index: 1;">
+                  <div class="card-shadow"></div>
+                  <div class="card card--2">
+                    <div class="heading">Website</div>
+                    <div class="subheading">Parallax Effect</div>
+                    <a class="number" href="https://melik1986.github.io/turbo-invention/">github.io</a>
+                  </div>
+                </li>
+
+                <li class="card-wrapper" style="--index: 2;">
+                  <div class="card-shadow"></div>
+                  <div class="card card--3">
+                    <div class="heading">Website</div>
+                    <div class="subheading">Tilda</div>
+                    <a class="number" href="https://projekt-fitness-centr.tilda.ws/">projekt-fitness-centr.tilda.</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Placeholder for Resume section -->
+      <section id="resume" class="resume">
+        <div class="container">
+          <div class="resume__container">
+            <!-- carousel -->
+            <div class="carousel-resume">
+              <!-- list item -->
+              <ul class="carousel-resume__list">
+                <li class="carousel-resume__item">
+                  <img class="carousel-resume__img" src="images/resume/lebenslauf-clasic1.png"
+                    srcset="images/resume/lebenslauf-clasic1-mobile.png 480w, images/resume/lebenslauf-clasic1-tablet.png 1024w, images/resume/lebenslauf-clasic1-desktop.png 1440w"
+                    sizes="(max-width: 1920px) 480px, 1024px, 1440px" alt="lebenslauf-clasic1">
+                </li>
+                <li class="carousel-resume__item">
+                  <img class="carousel-resume__img" src="images/resume/lebenslauf-clasic2-tablet.png"
+                    srcset="images/resume/lebenslauf-clasic2-tablet.png 480w, images/resume/lebenslauf-clasic2-desktop.png 1440w"
+                    sizes="(max-width: 1920px) 480px, 1440px" alt="lebenslauf-clasic2">
+                </li>
+              </ul>
+              <!-- list thumnail -->
+              <ul class="carousel-resume carousel-resume--thumbnail">
+                <li class="carousel-resume__item">
+                  <img class="carousel-resume__img" src="images/resume/lebenslauf-clasic1.png"
+                    srcset="images/resume/lebenslauf-clasic1-mobile.png 1x, images/resume/lebenslauf-clasic1-mobile@2x.png 2x"
+                    sizes="(max-width: 480px) 1024px, 1440px" alt="lebenslauf-clasic1">
+                  <div class="carousel-resume__content">
+                    <div class="carousel-resume__title">
+                      Resume
+                    </div>
+                  </div>
+                </li>
+                <li class="carousel-resume__item">
+                  <img class="carousel-resume__img" src="images/resume/lebenslauf-clasic2.png"
+                    srcset="images/resume/lebenslauf-clasic2-mobile.png 1x, images/resume/lebenslauf-clasic2-mobile@2x.png 2x"
+                    sizes="(max-width: 480px) 1024px, 1440px" alt="lebenslauf-clasic2">
+                  <div class="carousel-resume__content">
+                    <div class="carousel-resume__title">
+                      Resume
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <!-- next prev -->
+
+              <div class="carousel-resume__arrows">
+                <button class="carousel-resume__button" id="prevs">
+                  <<< /button>
+                    <button class="carousel-resume__button" id="nexts">>></button>
+              </div>
+              <!-- time running -->
+              <div class="carousel-resume__time"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+      <div class="container">
+        <h1 class="footer__header">Contact</h1>
+        <p class="footer__text">Dear visitors, the site is under development and will be imptroved</p>
+
+        <div class="footer__wrapper">
+
+          <!-- Left contact page -->
+
+          <form id="contact-form" class="form-horizontal" role="form">
+
+            <div class="form-group">
+              <div class="col-sm-12">
+                <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-12">
+                <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
+              </div>
+            </div>
+
+            <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+
+            <button class="footer__btn footer__btn-primary send-button" id="submit" type="submit" value="SEND">
+              <div class="alt-send-button">
+                <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+              </div>
+
+            </button>
+
+          </form>
+
+          <!-- Left contact page -->
+
+          <div class="direct-contact-container">
+
+            <ul class="contact-list">
+              <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">Germany,
+                    Duisburg</span></i></li>
+
+              <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a
+                      href="tel:1-212-555-5555" title="Give me a call">(511) 0607-607</a></span></i></li>
+
+              <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#"
+                      title="Send me an email">melikmusinian@gmail.com</a></span></i></li>
+
+            </ul>
+
+            <hr>
+            <ul class="social-media-list">
+              <li><a href="#" target="_blank" class="contact-icon">
+                  <i class="fa fa-github" aria-hidden="true">
+                  </i></a>
+              </li>
+              <li><a href="#" target="_blank" class="contact-icon">
+                  <i class="fa fa-codepen" aria-hidden="true"></i></a>
+              </li>
+              <li><a href="#" target="_blank" class="contact-icon">
+                  <i class="fa fa-twitter" aria-hidden="true"></i></a>
+              </li>
+              <li><a href="#" target="_blank" class="contact-icon">
+                  <i class="fa fa-instagram" aria-hidden="true"></i></a>
+              </li>
+            </ul>
+            <hr>
+
+            <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
+
+          </div>
+
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="js/parallax.js"></script>
+  <script src="js/burger.js"></script>
+  <script src="js/animation.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/carousel-resume.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/btn.js"></script>
+  <script src="js/ninja-slider.js"></script>
+</body>
+
+</html>

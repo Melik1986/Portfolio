@@ -1,0 +1,31 @@
+.banner {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  margin-bottom: 160px;
+  background-color: #98e5fe;
+
+  @include vp-360 {
+  }
+
+  @include vp-768 {
+  }
+
+  @include vp-1024 {
+  }
+
+  @include vp-1304 {
+  }
+
+  @media (min-width: 1920px) {
+    margin-bottom: 300px;
+  }
+
+  @media screen and (min-width: 2200px) {
+  }
+}

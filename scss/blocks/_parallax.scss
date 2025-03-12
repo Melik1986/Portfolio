@@ -1,0 +1,445 @@
+.parallax {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: visible;
+  transform-style: preserve-3d;
+  perspective: 1px;
+  z-index: 1;
+
+  @include vp-1304 {}
+
+  @media (min-width: 1440px) {}
+
+  @media (min-width: 1920px) {}
+
+  @media (min-width: 2200px) {}
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    pointer-events: none;
+    will-change: transform;
+    transform-style: preserve-3d;
+
+    &--mount {
+      z-index: -20;
+    }
+
+    &--mount1 {
+      z-index: 10;
+    }
+
+    &--mount2 {
+      z-index: 20;
+    }
+
+    &--city {
+      z-index: 30;
+      transform-origin: 50% 50%;
+      top: 47%;
+
+      @include vp-768 {
+        top: 43%;
+      }
+
+      @include vp-1304 {
+        top: 37%;
+      }
+
+      @media (min-width: 1920px) {
+        top: 33%;
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    opacity: 0.8;
+    width: auto;
+    height: auto;
+    z-index: 21;
+    max-width: 100vw;
+    overflow: visible;
+
+
+    @keyframes moveCloud1 {
+      from {
+        transform: translateX(-10px);
+      }
+
+      to {
+        transform: translateX(10px);
+      }
+    }
+
+    @keyframes moveCloud2 {
+      from {
+        transform: translateX(15px);
+      }
+
+      to {
+        transform: translateX(-15px);
+      }
+    }
+
+    @keyframes moveCloud3 {
+      from {
+        transform: translateX(-8px);
+      }
+
+      to {
+        transform: translateX(8px);
+      }
+    }
+
+    &--left {
+      width: 10%;
+      height: 8%;
+      left: 15%;
+      animation: moveCloud1 10s linear infinite alternate;
+      bottom: 16%;
+      z-index: 30;
+
+      @include vp-768 {}
+
+      @include vp-1024 {
+        width: 20%;
+        height: 10%;
+        bottom: 16%;
+      }
+
+      @include vp-1304 {
+        bottom: 22%;
+      }
+
+      @media (min-width: 1920px) {
+        width: 10%;
+        height: 20%;
+      }
+    }
+
+    &--center {
+      width: 12%;
+      height: 8%;
+      left: 50%;
+      bottom: 28%;
+      transform: translateX(-50%);
+      animation: moveCloud2 5s linear infinite alternate;
+      z-index: 32;
+
+      @include vp-768 {}
+
+      @include vp-1024 {
+        width: 20%;
+        height: 10%;
+        bottom: 28%;
+      }
+
+      @include vp-1304 {
+        bottom: 28%;
+      }
+
+      @media (min-width: 1920px) {
+        width: 10%;
+        height: 20%;
+      }
+    }
+
+    &--right {
+      width: 10%;
+      height: 7%;
+      bottom: 22%;
+      right: 15%;
+      animation: moveCloud3 10s linear infinite alternate;
+      z-index: 22;
+
+      @include vp-768 {}
+
+      @include vp-1024 {
+        width: 20%;
+        height: 10%;
+        bottom: 14%;
+      }
+
+      @include vp-1304 {
+        bottom: 29%;
+      }
+
+      @media (min-width: 1920px) {
+        width: 10%;
+        height: 20%;
+      }
+    }
+
+    &--top {
+      bottom: 12%;
+      right: 15%;
+      animation: moveCloud3 7s linear infinite alternate;
+      width: 8%;
+      height: 6%;
+
+      @include vp-768 {
+        // display: none;
+      }
+
+      @include vp-1024 {
+        width: 20%;
+        height: 10%;
+        bottom: 46%;
+        right: 35%;
+      }
+
+      @media (min-width: 1920px) {
+        width: 10%;
+        height: 20%;
+      }
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 1rem;
+    max-width: 250px;
+    height: auto;
+    z-index: -15;
+    // /* From https://css.glass */
+    // background: rgba(255, 255, 255, 0.2);
+    // border-radius: 16px;
+    // box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    // backdrop-filter: blur(5px);
+    // -webkit-backdrop-filter: blur(5px);
+    // border: 1px solid rgba(255, 255, 255, 0.3);
+
+    background: rgba(255, 255, 255, 0.1);
+    /* Полупрозрачный белый */
+    border-radius: 20px;
+    /* Скругление углов */
+    backdrop-filter: blur(10px);
+    /* Размытие фона */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Легкий белый обвод */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* Мягкая тень */
+    background: linear-gradient(to right bottom,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.05));
+
+
+
+    &:hover {
+      -webkit-box-shadow: 0px 0px 25px 20px rgba(0, 191, 255, 0.52);
+      -moz-box-shadow: 0px 0px 25px 20px rgba(0, 191, 255, 0.52);
+      box-shadow: 0px 0px 25px 20px rgba(0, 191, 255, 0.52);
+    }
+
+    @include vp-360 {
+      max-width: 250px;
+      top: 28%;
+    }
+
+    @include vp-768 {
+      max-width: 500px;
+      padding: 1.5rem;
+      top: 24%;
+    }
+
+    @include vp-1024 {
+      max-width: 340px;
+      padding: 2rem;
+      top: 18%;
+      left: 40px;
+    }
+
+    @include vp-1304 {
+      max-width: 450px;
+      padding: 1rem;
+      left: 20%;
+      top: 24%;
+    }
+
+    @media (min-width: 1920px) {
+      background-color: transparent;
+      border: none;
+      padding: 1rem;
+      animation: none;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-family: $ff-chango;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 65px;
+    // background: $color-gradient;
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
+    // background-clip: text;
+    // background-color: #00B7EB;
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
+    // background-clip: text;
+    // opacity: 0;
+    transform: translateX(-120%);
+    animation: slideIn 1s ease-out forwards;
+    color: #00bfff;
+
+    @keyframes slideInText {
+      0% {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @include vp-360 {
+      font-size: 24px;
+      line-height: 33px;
+    }
+
+    @include vp-768 {
+      font-size: 28px;
+      line-height: 38px;
+    }
+
+    @include vp-1024 {
+      font-size: 32px;
+      line-height: 42px;
+    }
+
+    @include vp-1304 {
+      font-size: 36px;
+      line-height: 48px;
+    }
+
+    @media (min-width: 1920px) {
+      font-size: 40px;
+      line-height: 55px;
+    }
+  }
+
+  &__text {
+    font-family: $ff-open;
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-wrap: balance;
+    // background: $color-gradient;
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
+    // background-clip: text;
+    // color: #00B7EB;
+    // opacity: 0;
+    transform: translateX(-120%);
+    animation: slideInText 2s ease-out forwards;
+    animation-delay: 1s;
+    color: #00bfff;
+
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @include vp-360 {
+      font-size: 18px;
+      line-height: 27px;
+    }
+
+    @include vp-768 {
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    @include vp-1024 {
+      font-size: 22px;
+      line-height: 33px;
+    }
+
+    @include vp-1304 {
+      font-size: 24px;
+      line-height: 36px;
+    }
+
+    @media (min-width: 1920px) {
+      font-size: 26px;
+      line-height: 39px;
+    }
+  }
+
+  &__description {
+    font-family: $ff-open;
+    margin: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-wrap: balance;
+    color: #FFFFFF;
+    // color: #00B7EB;
+    opacity: 0;
+    transform: translateY(100%);
+    animation: slideUp 1.5s ease-out forwards;
+    animation-delay: 2.5s;
+    /* Задержка после заголовка (1с) и подзаголовка (1с + 1с) */
+
+    @keyframes slideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(100%);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @include vp-360 {
+      font-size: 14px;
+      line-height: 21px;
+    }
+
+    @include vp-768 {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    @include vp-1024 {
+      font-size: 18px;
+      line-height: 27px;
+    }
+
+    @include vp-1304 {
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    @media (min-width: 1920px) {
+      font-size: 22px;
+      line-height: 33px;
+    }
+  }
+}

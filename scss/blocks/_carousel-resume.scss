@@ -1,0 +1,272 @@
+/* carousel-resume */
+.carousel-resume {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  @include vp-360 {
+    height: 60vh;
+  }
+
+  @include vp-768 {
+    height: 200vh;
+    overflow: visible;
+    margin-bottom: 80px;
+  }
+
+  @include vp-1024 {
+    height: 100vh;
+  }
+
+  @include vp-1304 {
+    height: 100vh;
+  }
+}
+
+.carousel-resume__list .carousel-resume__item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.carousel-resume__list .carousel-resume__item .carousel-resume__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* thumbnail */
+.carousel-resume--thumbnail {
+  position: absolute;
+  top: 90%;
+  transform: translateX(-50%);
+  width: max-content;
+  z-index: 100;
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @include vp-360 {
+    top: 100%;
+    display: none;
+  }
+
+  @include vp-1024 {
+    top: 90%;
+    right: 19px;
+    transform: translateX(-50%);
+    display: flex;
+  }
+
+  @include vp-1304 {
+    right: 14px;
+  }
+
+  @media (min-width: 1920px) {
+    right: 180px;
+  }
+}
+
+.carousel-resume--thumbnail .carousel-resume__item {
+  width: 150px;
+  height: 220px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.carousel-resume__list .carousel-resume__item picture {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.carousel-resume--thumbnail .carousel-resume__item .carousel-resume__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.carousel-resume--thumbnail .carousel-resume__item .carousel-resume__content {
+  color: #00bfff;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+}
+
+.carousel-resume--thumbnail .carousel-resume__item .carousel-resume__title {
+  font-weight: 500;
+}
+
+/* arrows */
+.carousel-resume__arrows {
+  position: absolute;
+  bottom: 0;
+  right: 33%;
+  z-index: 100;
+  width: 300px;
+  max-width: 30%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  @include vp-1024 {
+    right: 40%;
+    bottom: -80px;
+  }
+
+  @include vp-1304 {
+    right: 30%;
+  }
+
+  @media (min-width: 1920px) {
+    bottom: -80px;
+  }
+}
+
+.carousel-resume__arrows .carousel-resume__button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #eee4;
+  border: none;
+  color: #fff;
+  font-family: monospace;
+  font-weight: bold;
+  transition: .5s;
+}
+
+.carousel-resume__arrows .carousel-resume__button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* animation */
+.carousel-resume .carousel-resume__list .carousel-resume__item:nth-child(1) {
+  z-index: 1;
+}
+
+/* animation when next click */
+.carousel-resume.next .carousel-resume__list .carousel-resume__item:nth-child(1) .carousel-resume__img {
+  width: 150px;
+  height: 220px;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  border-radius: 30px;
+  animation: showImage .5s linear 1 forwards;
+}
+
+@keyframes showImage {
+  to {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+}
+
+.carousel-resume.next .carousel-resume--thumbnail .carousel-resume__item:nth-last-child(1) {
+  overflow: hidden;
+  animation: showThumbnail .5s linear 1 forwards;
+}
+
+.carousel-resume.prev .carousel-resume__list .carousel-resume__item .carousel-resume__img {
+  z-index: 100;
+}
+
+@keyframes showThumbnail {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+.carousel-resume.next .carousel-resume--thumbnail {
+  animation: effectNext .5s linear 1 forwards;
+}
+
+@keyframes effectNext {
+  from {
+    transform: translateX(150px);
+  }
+}
+
+/* running time */
+.carousel-resume__time {
+  position: absolute;
+  z-index: 1000;
+  width: 0%;
+  height: 3px;
+  background-color: #f1683a;
+  left: 0;
+  top: 0;
+}
+
+.carousel-resume.next .carousel-resume__time,
+.carousel-resume.prev .carousel-resume__time {
+  animation: runningTime 3s linear 1 forwards;
+}
+
+@keyframes runningTime {
+  from {
+    width: 100%
+  }
+  to {
+    width: 0
+  }
+}
+
+/* prev click */
+.carousel-resume.prev .carousel-resume__list .carousel-resume__item:nth-child(2) {
+  z-index: 2;
+}
+
+.carousel-resume.prev .carousel-resume__list .carousel-resume__item:nth-child(2) .carousel-resume__img {
+  animation: outFrame 0.5s linear 1 forwards;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+@keyframes outFrame {
+  to {
+    width: 150px;
+    height: 220px;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 20px;
+  }
+}
+
+.carousel-resume.prev .carousel-resume--thumbnail .carousel-resume__item:nth-child(1) {
+  overflow: hidden;
+  opacity: 0;
+  animation: showThumbnail .5s linear 1 forwards;
+}
+
+.carousel-resume.next .carousel-resume__arrows .carousel-resume__button,
+.carousel-resume.prev .carousel-resume__arrows .carousel-resume__button {
+  pointer-events: none;
+}
+
+@media screen and (max-width: 678px) {
+  .carousel-resume .carousel-resume__list .carousel-resume__item .carousel-resume__content {
+    padding-right: 0;
+  }
+  
+  .carousel-resume .carousel-resume__list .carousel-resume__item .carousel-resume__title {
+    font-size: 30px;
+  }
+}

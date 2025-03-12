@@ -1,0 +1,62 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; // Нормализуем размер шрифта
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden; // Убираем горизонтальную прокрутку
+  overflow-y: auto; // Возвращаем вертикальную прокрутку
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  color: $color-black-russian;
+  margin: 0;
+  padding: 0;
+  background: #060c15;
+  background: radial-gradient(circle farthest-corner at center center, #1A1A1A 34%, #222526 65%);
+  min-height: 100vh; // Изменено на полную высоту viewport
+  position: relative;
+}
+
+.conteiner__wrapper {
+  width: 100%;
+  height: 100%;
+  // overflow-y: auto; // Включаем вертикальную прокрутку
+  // overflow-x: hidden; // Блокируем горизонтальную прокрутку
+  position: relative;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch; // Плавная прокрутка на iOS
+  overflow: hidden;
+}
+
+main {
+  position: relative;
+  padding: 0; // Убираем верхний padding
+  flex-grow: 1;
+  z-index: 8;
+  background-color: #1a1a1a;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+  height: auto;
+}
+
+a {
+  color: $color-black-russian;
+  text-decoration: none;
+}
+
+img, video, canvas {
+  overflow: hidden; /* Или scroll, или auto */
+}

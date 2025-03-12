@@ -1,0 +1,235 @@
+.about {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  border-radius: 0px 100px 0px 70px;
+  border-bottom: 2px solid rgba(0, 191, 255, 0.52);
+  padding-bottom: 20px;
+
+  @include vp-360 {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+  }
+
+  @include vp-768 {
+    margin-bottom: 30px;
+  }
+
+  @include vp-1024 {
+    margin-bottom: 40px;
+  }
+
+  @include vp-1304 {
+    margin-bottom: 60px;
+  }
+
+  @media (min-width: 1920px) {
+    margin-bottom: 80px;
+    padding-bottom: 60px;
+  }
+
+  &__image-shadow {
+    position: absolute;
+    top: -64.5%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    @include vp-768 {
+      top: -63.5%;
+    }
+
+    @include vp-1024 {
+      top: -64%;
+    }
+
+    @include vp-1304 {
+      top: -62.5%;
+    }
+
+    @media (min-width: 1920px) {
+      top: -79.5%;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+    gap: 30px;
+    overflow: hidden;
+
+    @include vp-360 {
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @include vp-768 {}
+
+    @include vp-1024 {
+      gap: 10px;
+      flex-wrap: nowrap;
+    }
+
+    @include vp-1304 {}
+  }
+
+  &__content {
+    margin: 10px 5px 10px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 20px 20px;
+    border-radius: 25px;
+    background: #1a1a1a;
+    cursor: pointer;
+
+    @include vp-360 {
+      max-width: 90%;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @include vp-768 {}
+
+    @include vp-1024 {
+      width: 70vh;
+    }
+
+    @include vp-1304 {
+      width: 100%;
+    }
+
+    &:hover {
+      color: rgb(88 199 250 / 100%);
+      transition: color 1s;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      // inset: 0;
+      left: -5px;
+      margin: auto;
+      border-radius: 25px;
+      background: linear-gradient(-45deg, rgba(0, 191, 255, 0.9) 0%, #40c9ff 100%);
+      z-index: -10;
+      pointer-events: none;
+      transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    &::after {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(-45deg, rgba(0, 191, 255, 0.9) 0%, #00dbde 100%);
+      transform: translate3d(0, 0, 0) scale(0.95);
+      filter: blur(8px);
+    }
+
+    &:hover::after {
+      filter: blur(10px);
+    }
+
+    &:hover::before {
+      transform: rotate(-180deg) scaleX(1.34) scaleY(0.77);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-family: $ff-open;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 65px;
+    background: $color-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: start;
+    text-shadow: 0 5px 10px #0004;
+
+    @include vp-360 {
+      font-size: 24px;
+      line-height: 32px;
+      text-align: center;
+    }
+
+    @include vp-768 {
+      font-size: 28px;
+      line-height: 38px;
+    }
+
+    @include vp-1024 {
+      font-size: 32px;
+      line-height: 45px;
+    }
+
+    @include vp-1304 {
+      font-size: 26px;
+      line-height: 38px;
+    }
+
+    @media (min-width: 1920px) {
+      font-size: 40px;
+      line-height: 55px;
+    }
+  }
+
+  &__text {
+    font-family: $ff-noto;
+    font-size: 18px;
+    line-height: 28px;
+    color: $color-white;
+    text-wrap: balance;
+    text-shadow: 0 5px 10px #0004;
+
+    @include vp-360 {
+      font-size: 14px;
+      line-height: 21px;
+      text-align: center;
+    }
+
+    @include vp-768 {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    @include vp-1024 {
+      font-size: 18px;
+      line-height: 27px;
+    }
+
+    @include vp-1304 {
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    @media (min-width: 1920px) {
+      font-size: 28px;
+      line-height: 42px;
+    }
+  }
+
+  &__image {
+    display: block;
+    margin: 0;
+    clip-path: polygon(0% 0%, 68% 0, 100% 36%, 100% 100%, 0% 100%);
+
+    @include vp-360 {}
+
+    @include vp-768 {}
+
+    @include vp-1024 {}
+
+    @include vp-1304 {}
+  }
+}

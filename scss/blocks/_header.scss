@@ -1,0 +1,253 @@
+.header {
+  max-width: 100%;
+  padding: 15px 0 40px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+
+  @include vp-360 {
+    padding: 10px 0;
+  }
+
+  @include vp-768 {
+    padding: 5px 0 10px 0;
+  }
+
+  @include vp-1024 {
+    padding: 10px 0 15px;
+  }
+
+  @include vp-1304 {
+    padding: 16px 0;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: visible;
+
+    @include vp-1024 {
+      justify-content: space-between;
+      flex-direction: row;
+      overflow: hidden;
+    }
+  }
+
+
+  &__logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    margin-right: auto;
+    cursor: none;
+
+    @include vp-1024 {
+      position: relative;
+    }
+
+    @include vp-1304 {
+      margin-right: auto;
+    }
+
+    @media (min-width: 1920px) {
+      width: 216px;
+      height: 48px;
+      margin: 0;
+    }
+
+    &:hover .header__logo-image {
+      cursor: pointer;
+      fill: #00bfff;
+      text-shadow: rgba(0, 191, 255, 0.9) 0px 0px 24px;
+      filter: drop-shadow(rgba(0, 191, 255, 0.9) 0px 0px 24px);
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__logo use {
+    transform: translateX(0);
+  }
+
+  &__logo-image {
+    width: 172px;
+    height: 40px;
+    margin-right: auto;
+    align-self: flex-start;
+    display: block;
+    transform: translateX(0);
+    padding: 0;
+    object-position: left;
+    fill: #fff;
+
+    &:hover,
+    &:focus,
+    &:focus-visible {
+      cursor: pointer;
+      outline: none;
+      fill: #00bfff;
+      text-shadow: rgba(0, 191, 255, 0.9) 0px 0px 24px;
+      filter: drop-shadow(rgba(0, 191, 255, 0.9) 0px 0px 24px);
+    }
+
+    @include vp-360 {
+      width: 160px;
+      height: 36px;
+    }
+
+    @include vp-768 {
+      width: 200px;
+      height: 44px;
+    }
+
+    @include vp-1024 {
+      width: 240px;
+      height: 50px;
+    }
+
+    @include vp-1304 {
+      width: 260px;
+      height: 50px;
+    }
+
+    @media (min-width: 1920px) {
+      width: 260px;
+      height: 56px;
+    }
+  }
+
+  &__nav {
+    display: none;
+    align-items: center;
+    gap: 12px;
+
+    @include vp-1024 {
+      display: flex;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-transform: uppercase;
+
+    @include vp-768 {
+      gap: 24px;
+    }
+
+    @include vp-1024 {
+      gap: 28px;
+    }
+
+    @include vp-1304 {
+      gap: 32px;
+    }
+  }
+
+  &__list-item {
+    display: flex;
+    align-items: center;
+    list-style: outside none none;
+    margin: 0 1.5em;
+    overflow: hidden;
+  }
+
+  &__link {
+    cursor: pointer;
+    color: $color-white;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    font-family: $ff-open;
+    padding: 0.3em 0;
+    position: relative;
+
+    &:hover,
+    &:focus-visible {
+      cursor: pointer;
+      outline: none;
+      color: #00bfff;
+      text-shadow: rgba(0, 191, 255, 0.9) 0px 0px 24px;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+    }
+
+    &:after {
+      opacity: 0;
+      transform-origin: right;
+      transform: scaleX(0);
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      background-color: #00bfff;
+      transition: transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+    }
+
+    &:hover:after {
+      opacity: 1;
+      transform: scaleX(1);
+      transform-origin: left;
+      transition: transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+    }
+
+    @include vp-360 {
+      font-size: 16px;
+      line-height: 18px;
+    }
+
+    @include vp-768 {
+      font-size: 17px;
+      line-height: 20px;
+    }
+
+    @include vp-1024 {
+      font-size: 16px;
+      line-height: 18px;
+    }
+
+    @include vp-1304 {
+      font-size: 18px;
+      line-height: 20px;
+    }
+
+    @media (min-width: 1920px) {
+      font-size: 22px;
+      line-height: 26px;
+    }
+  }
+
+  &__btn {
+
+    @include vp-768 {
+      display: none;
+    }
+
+    @include vp-1024 {
+      display: block;
+    }
+  }
+}

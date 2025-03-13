@@ -159,35 +159,35 @@
   }
 
   &--1 {
-    background-image: url("./images/works/work7-mobile.png");
+    background-image: url("../images/works/work7-mobile.png");
 
     @include vp-1024 {
-      background-image: url("./images/works/work7-tablet.png");
+      background-image: url("../images/works/work7-tablet.png");
     }
     @include vp-1304 {
-      background-image: url("./images/works/work7-desktop.png");
+      background-image: url("../images/works/work7-desktop.png");
     }
   }
 
   &--2 {
-    background-image: url("./images/works/work8-mobile.png");
+    background-image: url("../images/works/work8-mobile.png");
 
     @include vp-1024 {
-      background-image: url("./images/works/work8-tablet.png");
+      background-image: url("../images/works/work8-tablet.png");
     }
     @include vp-1304 {
-      background-image: url("./images/works/work8-desktop.png");
+      background-image: url("../images/works/work8-desktop.png");
     }
   }
 
   &--3 {
-    background-image: url("./images/works/work9-mobile.png");
+    background-image: url("../images/works/work9-mobile.png");
 
     @include vp-1024 {
-      background-image: url("./images/works/work9-tablet.png");
+      background-image: url("../images/works/work9-tablet.png");
     }
     @include vp-1304 {
-      background-image: url("./images/works/work9-desktop.png");
+      background-image: url("../images/works/work9-desktop.png");
     }
   }
 

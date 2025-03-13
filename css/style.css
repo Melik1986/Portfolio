@@ -3514,42 +3514,42 @@ div.navsWrapper {
   }
 }
 .card--1 {
-  background-image: url("/images/works/work7-mobile.png");
+  background-image: url("images/works/work7-mobile.png");
 }
 @media (min-width: 1024px) {
   .card--1 {
-    background-image: url("/images/works/work7-tablet.png");
+    background-image: url("images/works/work7-tablet.png");
   }
 }
 @media (min-width: 1304px) {
   .card--1 {
-    background-image: url("/images/works/work7-desktop.png");
+    background-image: url("images/works/work7-desktop.png");
   }
 }
 .card--2 {
-  background-image: url("/images/works/work8-mobile.png");
+  background-image: url("images/works/work8-mobile.png");
 }
 @media (min-width: 1024px) {
   .card--2 {
-    background-image: url("/images/works/work8-tablet.png");
+    background-image: url("images/works/work8-tablet.png");
   }
 }
 @media (min-width: 1304px) {
   .card--2 {
-    background-image: url("/images/works/work8-desktop.png");
+    background-image: url("images/works/work8-desktop.png");
   }
 }
 .card--3 {
-  background-image: url("/images/works/work9-mobile.png");
+  background-image: url("images/works/work9-mobile.png");
 }
 @media (min-width: 1024px) {
   .card--3 {
-    background-image: url("/images/works/work9-tablet.png");
+    background-image: url("images/works/work9-tablet.png");
   }
 }
 @media (min-width: 1304px) {
   .card--3 {
-    background-image: url("/images/works/work9-desktop.png");
+    background-image: url("images/works/work9-desktop.png");
   }
 }
 .cards-main:hover .card-wrapper:not(:hover) .card {

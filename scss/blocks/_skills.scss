@@ -31,46 +31,55 @@
     overflow: visible;
 
     @include vp-360 {
-      left: 80px;
-      top: 450px;
+      left: 0;
+      top: 620px;
       transform: translatey(-50%);
     }
 
-    @media screen and (min-width: 680px) {
-      left: 220px;
-      top: 350px;
+    @media (min-width: 390px) {
+      left: 0;
+    }
+    @media (min-width: 490px) {
+      left: 0;
+      top: 500px;
+    }
+
+    @media (min-width: 600px) {
+      left: 50%;
+      transform: translate(-30%, -50%);
+      top: 450px;
     }
 
     @include vp-768 {
-      left: 265px;
-      top: 20%;
+      left: 50%;
+      transform: translate(-30%, -50%);
+      top: 420px;
     }
 
     @include vp-1024 {
-      top: 25%;
-      left: 40%;
+      left: 50%;
+      transform: translate(-30%, -50%);
+      top: 420px;
     }
 
     @include vp-1304 {
-      top: 40%;
-      left: 37%;
+      left: 50%;
+      transform: translate(-30%, -50%);
+      top: 420px;
       height: 30%;
       width: 40%;
     }
 
     @media (min-width: 1920px) {
-      top: 49%;
-      left: 36%;
+      left: 50%;
+      transform: translate(-30%, -50%);
+      top: 520px;
     }
 
     @media (min-width: 2200px) {
-      top: 48%;
-      left: 36%;
     }
 
     @media (min-width: 3125px) {
-      top: 45%;
-      left: 31%;
     }
   }
 

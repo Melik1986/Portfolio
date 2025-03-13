@@ -1532,53 +1532,57 @@ img, video, canvas {
 }
 @media (min-width: 360px) {
   .skills__animation {
-    left: 80px;
-    top: 450px;
+    left: 0;
+    top: 620px;
     transform: translatey(-50%);
   }
 }
-@media screen and (min-width: 680px) {
+@media (min-width: 390px) {
   .skills__animation {
-    left: 220px;
-    top: 350px;
+    left: 0;
+  }
+}
+@media (min-width: 490px) {
+  .skills__animation {
+    left: 0;
+    top: 500px;
+  }
+}
+@media (min-width: 600px) {
+  .skills__animation {
+    left: 50%;
+    transform: translate(-30%, -50%);
+    top: 450px;
   }
 }
 @media (min-width: 768px) {
   .skills__animation {
-    left: 265px;
-    top: 20%;
+    left: 50%;
+    transform: translate(-30%, -50%);
+    top: 420px;
   }
 }
 @media (min-width: 1024px) {
   .skills__animation {
-    top: 25%;
-    left: 40%;
+    left: 50%;
+    transform: translate(-30%, -50%);
+    top: 420px;
   }
 }
 @media (min-width: 1304px) {
   .skills__animation {
-    top: 40%;
-    left: 37%;
+    left: 50%;
+    transform: translate(-30%, -50%);
+    top: 420px;
     height: 30%;
     width: 40%;
   }
 }
 @media (min-width: 1920px) {
   .skills__animation {
-    top: 49%;
-    left: 36%;
-  }
-}
-@media (min-width: 2200px) {
-  .skills__animation {
-    top: 48%;
-    left: 36%;
-  }
-}
-@media (min-width: 3125px) {
-  .skills__animation {
-    top: 45%;
-    left: 31%;
+    left: 50%;
+    transform: translate(-30%, -50%);
+    top: 520px;
   }
 }
 .skills__cards {
@@ -2284,13 +2288,25 @@ img, video, canvas {
 #avaturn-container {
   height: 500px;
   position: relative;
-  width: 100%;
+  width: 80%;
   margin-top: auto;
   margin-bottom: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+}
+@media (min-width: 360px) {
+  #avaturn-container {
+    height: 400px;
+    width: 80%;
+  }
+}
+@media (min-width: 1024px) {
+  #avaturn-container {
+    height: 500px;
+    width: 100%;
+  }
 }
 #avaturn-container #avaturn {
   position: absolute;
@@ -2795,7 +2811,7 @@ img, video, canvas {
 
 .works {
   margin-bottom: 40px;
-  padding: 20px 0 30px;
+  padding: 0 0 30px;
   border-radius: 0px 100px 0px 70px;
   border-bottom: 2px solid rgba(0, 191, 255, 0.52);
 }
@@ -2805,14 +2821,14 @@ img, video, canvas {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 0;
   gap: 40px;
 }
 @media (min-width: 360px) {
   .works__wrapper {
-    gap: 20px;
+    gap: 60px;
   }
 }
 @media (min-width: 768px) {
@@ -3089,14 +3105,14 @@ div.navsWrapper {
 }
 @media (min-width: 768px) {
   .carousel-resume {
-    height: 200vh;
+    height: 100vh;
     overflow: visible;
-    margin-bottom: 80px;
   }
 }
 @media (min-width: 1024px) {
   .carousel-resume {
     height: 100vh;
+    margin-bottom: 80px;
   }
 }
 @media (min-width: 1304px) {
@@ -3207,6 +3223,12 @@ div.navsWrapper {
   display: flex;
   gap: 10px;
   align-items: center;
+}
+@media (min-width: 768px) {
+  .carousel-resume__arrows {
+    right: 30%;
+    bottom: -50px;
+  }
 }
 @media (min-width: 1024px) {
   .carousel-resume__arrows {
@@ -3368,8 +3390,7 @@ div.navsWrapper {
   #root {
     grid-template-columns: 1fr;
     grid-template-areas: "main";
-    padding: 0 10px;
-    margin-bottom: 80px;
+    padding: 10px 0 10px;
   }
 }
 @media (min-width: 768px) {
@@ -3427,7 +3448,7 @@ div.navsWrapper {
   top: calc(6rem * var(--index));
   transform: scale(calc(0.95 + 0.01 * var(--index))) translateZ(calc(1rem * var(--index)));
   width: 90%;
-  height: 50vh;
+  height: 40vh;
   transition: all 0.5s ease;
 }
 @media (min-width: 360px) {
@@ -3514,42 +3535,42 @@ div.navsWrapper {
   }
 }
 .card--1 {
-  background-image: url("images/works/work7-mobile.png");
+  background-image: url("/images/works/work7-mobile.png");
 }
 @media (min-width: 1024px) {
   .card--1 {
-    background-image: url("images/works/work7-tablet.png");
+    background-image: url("/images/works/work7-tablet.png");
   }
 }
 @media (min-width: 1304px) {
   .card--1 {
-    background-image: url("images/works/work7-desktop.png");
+    background-image: url("/images/works/work7-desktop.png");
   }
 }
 .card--2 {
-  background-image: url("images/works/work8-mobile.png");
+  background-image: url("/images/works/work8-mobile.png");
 }
 @media (min-width: 1024px) {
   .card--2 {
-    background-image: url("images/works/work8-tablet.png");
+    background-image: url("/images/works/work8-tablet.png");
   }
 }
 @media (min-width: 1304px) {
   .card--2 {
-    background-image: url("images/works/work8-desktop.png");
+    background-image: url("/images/works/work8-desktop.png");
   }
 }
 .card--3 {
-  background-image: url("images/works/work9-mobile.png");
+  background-image: url("/images/works/work9-mobile.png");
 }
 @media (min-width: 1024px) {
   .card--3 {
-    background-image: url("images/works/work9-tablet.png");
+    background-image: url("/images/works/work9-tablet.png");
   }
 }
 @media (min-width: 1304px) {
   .card--3 {
-    background-image: url("images/works/work9-desktop.png");
+    background-image: url("/images/works/work9-desktop.png");
   }
 }
 .cards-main:hover .card-wrapper:not(:hover) .card {
@@ -3911,6 +3932,7 @@ hr {
   .form-control,
   textarea {
     margin: 0 auto;
+    width: 400px;
   }
   .name,
   .email,

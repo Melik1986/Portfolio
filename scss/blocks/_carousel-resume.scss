@@ -10,13 +10,13 @@
   }
 
   @include vp-768 {
-    height: 200vh;
+    height: 100vh;
     overflow: visible;
-    margin-bottom: 80px;
   }
 
   @include vp-1024 {
     height: 100vh;
+    margin-bottom: 80px;
   }
 
   @include vp-1304 {
@@ -119,6 +119,11 @@
   display: flex;
   gap: 10px;
   align-items: center;
+
+  @include vp-768 {
+    right: 30%;
+    bottom: -50px;
+  }
 
   @include vp-1024 {
     right: 40%;

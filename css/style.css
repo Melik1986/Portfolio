@@ -1532,19 +1532,13 @@ img, video, canvas {
 }
 @media (min-width: 360px) {
   .skills__animation {
-    left: 0;
     top: 620px;
-    transform: translatey(-50%);
-  }
-}
-@media (min-width: 390px) {
-  .skills__animation {
-    left: 0;
+    left: 50%;
+    transform: translate(-30%, -50%);
   }
 }
 @media (min-width: 490px) {
   .skills__animation {
-    left: 0;
     top: 500px;
   }
 }
@@ -2299,7 +2293,7 @@ img, video, canvas {
 @media (min-width: 360px) {
   #avaturn-container {
     height: 400px;
-    width: 80%;
+    width: 68%;
   }
 }
 @media (min-width: 1024px) {

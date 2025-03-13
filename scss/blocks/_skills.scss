@@ -31,16 +31,14 @@
     overflow: visible;
 
     @include vp-360 {
-      left: 0;
       top: 620px;
-      transform: translatey(-50%);
+      left: 50%;
+      transform: translate(-30%, -50%);
     }
 
     @media (min-width: 390px) {
-      left: 0;
     }
     @media (min-width: 490px) {
-      left: 0;
       top: 500px;
     }
 

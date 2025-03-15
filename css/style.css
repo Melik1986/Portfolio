@@ -934,7 +934,7 @@ img, video, canvas {
   display: none;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 768px) {
   .menu-icon {
     display: inline-block;
   }
@@ -960,12 +960,12 @@ img, video, canvas {
         background-color:#205081;
     }*/
 }
-@media only screen and (max-width: 1024px) and (min-width: 768px) {
+@media only screen and (max-width: 768px) and (min-width: 768px) {
   #cssmenu {
     max-width: 30%;
   }
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 768px) {
   #cssmenu.active {
     display: flex;
     flex-direction: column;

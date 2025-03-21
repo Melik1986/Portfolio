@@ -1,4 +1,3 @@
-
 var nsOptions =
 {
   sliderId: "ninja-slider",
@@ -11,6 +10,246 @@ var nsOptions =
   initSliderByCallingInitFunc: false,
   shuffle: false,
   startSlideIndex: 0, //0-based
+  navigateByTap: true,
+  pauseOnHover: false,
+  keyboardNav: true,
+  before: null,
+  license: "mylicense"
+};
+
+var nslider = new NinjaSlider(nsOptions);
+
+/* Ninja Slider v2016.12.29 Copyright www.menucool.com */
+function NinjaSlider(options) {
+  "use strict";
+  
+  // Core variables
+  const sliderId = options.sliderId;
+  const slider = document.getElementById(sliderId);
+  const slides = slider.querySelector('ul').children;
+  let currentSlide = 0;
+  let totalSlides = slides.length;
+  let isPaused = false;
+  let autoPlayTimer = null;
+  
+  // Initialize slider
+  function init() {
+    setupSlides();
+    setupNavigation();
+    setupAutoPlay();
+    setupKeyboardNav();
+    setupResponsive();
+    setupTextAnimation();
+  }
+
+  // Setup slides
+  function setupSlides() {
+    Array.from(slides).forEach((slide, index) => {
+      slide.style.position = 'absolute';
+      slide.style.opacity = '0';
+      if (index === 0) {
+        slide.style.opacity = '1';
+      }
+    });
+  }
+
+  // Setup navigation
+  function setupNavigation() {
+    const navWrapper = document.createElement('div');
+    navWrapper.className = 'navsWrapper';
+    
+    // Prev button
+    const prevBtn = document.createElement('div');
+    prevBtn.id = `${sliderId}-prev`;
+    prevBtn.onclick = () => navigate('prev');
+    
+    // Next button
+    const nextBtn = document.createElement('div');
+    nextBtn.id = `${sliderId}-next`;
+    nextBtn.onclick = () => navigate('next');
+    
+    navWrapper.appendChild(prevBtn);
+    navWrapper.appendChild(nextBtn);
+    slider.appendChild(navWrapper);
+  }
+
+  // Navigation function
+  function navigate(direction) {
+    if (isPaused) return;
+    
+    const nextSlide = direction === 'next' 
+      ? (currentSlide + 1) % totalSlides 
+      : (currentSlide - 1 + totalSlides) % totalSlides;
+    
+    changeSlide(nextSlide);
+  }
+
+  // Change slide with animation
+  function changeSlide(nextIndex) {
+    const currentSlideEl = slides[currentSlide];
+    const nextSlideEl = slides[nextIndex];
+    
+    // Fade out current slide
+    currentSlideEl.style.transition = 'opacity 0.5s ease-out';
+    currentSlideEl.style.opacity = '0';
+    
+    // Fade in next slide
+    nextSlideEl.style.transition = 'opacity 0.5s ease-in';
+    nextSlideEl.style.opacity = '1';
+    
+    // Animate captions
+    const currentCaption = currentSlideEl.querySelector('.caption');
+    const nextCaption = nextSlideEl.querySelector('.caption');
+    
+    if (currentCaption) {
+      currentCaption.style.animation = 'none';
+      currentCaption.offsetHeight; // Trigger reflow
+      currentCaption.style.animation = 'titleAnimation 5s linear both';
+    }
+    
+    if (nextCaption) {
+      nextCaption.style.animation = 'none';
+      nextCaption.offsetHeight; // Trigger reflow
+      nextCaption.style.animation = 'titleAnimation 5s linear both';
+    }
+    
+    currentSlide = nextIndex;
+    updateNavigation();
+  }
+
+  // Update navigation buttons
+  function updateNavigation() {
+    const prevBtn = document.getElementById(`${sliderId}-prev`);
+    const nextBtn = document.getElementById(`${sliderId}-next`);
+    
+    prevBtn.className = currentSlide === 0 ? 'disabled' : '';
+    nextBtn.className = currentSlide === totalSlides - 1 ? 'disabled' : '';
+  }
+
+  // Setup autoplay
+  function setupAutoPlay() {
+    if (!options.autoAdvance) return;
+    
+    function startAutoPlay() {
+      autoPlayTimer = setInterval(() => {
+        if (!isPaused) {
+          navigate('next');
+        }
+      }, options.delay);
+    }
+    
+    function stopAutoPlay() {
+      clearInterval(autoPlayTimer);
+    }
+    
+    if (options.pauseOnHover) {
+      slider.addEventListener('mouseenter', stopAutoPlay);
+      slider.addEventListener('mouseleave', startAutoPlay);
+    }
+    
+    startAutoPlay();
+  }
+
+  // Setup keyboard navigation
+  function setupKeyboardNav() {
+    if (!options.keyboardNav) return;
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') navigate('prev');
+      if (e.key === 'ArrowRight') navigate('next');
+    });
+  }
+
+  // Setup responsive behavior
+  function setupResponsive() {
+    function updateSliderSize() {
+      const aspectRatio = options.aspectRatio.split(':');
+      const ratio = aspectRatio[1] / aspectRatio[0];
+      const width = slider.offsetWidth;
+      const height = width * ratio;
+      
+      slider.style.height = `${height}px`;
+      
+      // Update caption font size based on screen width
+      const captions = slider.querySelectorAll('.caption');
+      captions.forEach(caption => {
+        if (window.innerWidth <= 360) {
+          caption.style.fontSize = '1.5em';
+        } else if (window.innerWidth <= 700) {
+          caption.style.fontSize = '3em';
+        } else if (window.innerWidth <= 1100) {
+          caption.style.fontSize = '7em';
+        } else {
+          caption.style.fontSize = '10em';
+        }
+      });
+    }
+
+    window.addEventListener('resize', updateSliderSize);
+    updateSliderSize();
+  }
+
+  // Setup text animation
+  function setupTextAnimation() {
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes titleAnimation {
+        0% { opacity: 0; transform: translateY(-20%); }
+        10% { opacity: 0; transform: translateY(-20%); }
+        20% { opacity: 1; transform: translateY(0%); }
+        70% { opacity: 1; transform: translateY(0%); }
+        80% { opacity: 0; transform: translateY(100%); }
+        100% { opacity: 0; transform: translateY(100%); }
+      }
+      
+      .caption {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        color: #00bfff;
+        bottom: 20%;
+        text-transform: uppercase;
+        font-family: 'Bree Serif', sans-serif;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  // Initialize slider
+  init();
+
+  // Public methods
+  return {
+    next: () => navigate('next'),
+    prev: () => navigate('prev'),
+    pause: () => {
+      isPaused = true;
+      clearInterval(autoPlayTimer);
+    },
+    play: () => {
+      isPaused = false;
+      setupAutoPlay();
+    },
+    goToSlide: (index) => {
+      if (index >= 0 && index < totalSlides) {
+        changeSlide(index);
+      }
+    }
+  };
+}
+
+var nsOptions =
+{
+  sliderId: "ninja-slider",
+  transitionType: "zoom",
+  autoAdvance: true,
+  rewind: false,
+  delay: 4000,
+  transitionSpeed: 1000,
+  aspectRatio: "2:1",
+  initSliderByCallingInitFunc: false,
+  shuffle: false,
+  startSlideIndex: 0,
   navigateByTap: true,
   pauseOnHover: false,
   keyboardNav: true,

@@ -1,17 +1,17 @@
 var nsOptions =
 {
   sliderId: "ninja-slider",
-  transitionType: "zoom",
+  transitionType: "fade",
   autoAdvance: true,
   rewind: false,
-  delay: 4000,
-  transitionSpeed: 1000,
+  delay: 8000,
+  transitionSpeed: 2000,
   aspectRatio: "2:1", // "?:100%" is for responsive scaling based on window height
   initSliderByCallingInitFunc: false,
   shuffle: false,
   startSlideIndex: 0, //0-based
   navigateByTap: true,
-  pauseOnHover: false,
+  pauseOnHover: true,
   keyboardNav: true,
   before: null,
   license: "mylicense"
@@ -194,12 +194,10 @@ function NinjaSlider(options) {
     const style = document.createElement('style');
     style.textContent = `
       @keyframes titleAnimation {
-        0% { opacity: 0; transform: translateY(-20%); }
-        10% { opacity: 0; transform: translateY(-20%); }
+        0% { opacity: 0; transform: translateY(-10%); }
         20% { opacity: 1; transform: translateY(0%); }
-        70% { opacity: 1; transform: translateY(0%); }
-        80% { opacity: 0; transform: translateY(100%); }
-        100% { opacity: 0; transform: translateY(100%); }
+        80% { opacity: 1; transform: translateY(0%); }
+        100% { opacity: 0; transform: translateY(10%); }
       }
       
       .caption {
@@ -210,6 +208,7 @@ function NinjaSlider(options) {
         bottom: 20%;
         text-transform: uppercase;
         font-family: 'Bree Serif', sans-serif;
+        transition: all 1s ease-in-out;
       }
     `;
     document.head.appendChild(style);
@@ -241,17 +240,17 @@ function NinjaSlider(options) {
 var nsOptions =
 {
   sliderId: "ninja-slider",
-  transitionType: "zoom",
+  transitionType: "fade",
   autoAdvance: true,
   rewind: false,
-  delay: 4000,
-  transitionSpeed: 1000,
+  delay: 8000,
+  transitionSpeed: 2000,
   aspectRatio: "2:1",
   initSliderByCallingInitFunc: false,
   shuffle: false,
   startSlideIndex: 0,
   navigateByTap: true,
-  pauseOnHover: false,
+  pauseOnHover: true,
   keyboardNav: true,
   before: null,
   license: "mylicense"
